@@ -1,0 +1,31 @@
+$allowedDomainNames=Constants::BASE_URL;
+$apimethod="POST";
+$secondstoexpire=120;// set seconds you want the API response cache to expire and revalidated
+// limit access to resources to only those domains trusted, 
+header("Access-Control-Allow-Origin: $allowedDomainNames");
+//Indicate that the content being sent or received is in JSON format and encoded using the UTF-8 character encoding
+header("Content-Type: application/json; charset=UTF-8");
+// 1)private,max-age=60 (browser is only allowed to cache) 2)no-store(public),max-age=60 (all intermidiary can cache, not browser alone)  3)no-cache (no ceaching at all)  
+// comment below if you need to allow caching on this api
+header("Cache-Control: no-cache");
+// Uncomment below if you need to allow caching on this api
+// header("Cache-Control: public, max-age=$secondstoexpire"); // 86400 seconds = 24 hours
+
+// Set the Cache-Control and Expires headers
+// Calculate the expiration time (1 day from the current time)
+$expirationTime = time() + 60 * 10 ; // 60 seconds * 60 minutes * 24 hours
+// Set the Cache-Control and Expires headers
+header("Expires: " . gmdate('D, d M Y H:i:s', $expirationTime) . ' GMT');
+// below is for CORS, it should be uncommented if we want another domain apart from main domain to access this API
+// the server tells the browser that it can cache the results of the preflight request for 60 seconds. This means the browser will not send a preflight request for every subsequent request within the next 60 seconds, improving performance by reducing the number of preflight requests.
+// if (isset($_SERVER['HTTP_ORIGIN'])) {
+//     header('Access-Control-Max-Age: 60');    // cache for 60 seconds
+// }
+// if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+//     if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']))
+//         // headers we want external domain to send
+//         header("Access-Control-Allow-Headers: {$_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']},Authorization");
+//     // method external domain should uses before been allowed
+//     header("Access-Control-Allow-Methods: $apimethod");
+//         exit(0);
+// }

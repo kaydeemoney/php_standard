@@ -1,0 +1,1 @@
+a:6:{s:1:"k";s:12:"apidatatable";s:1:"d";s:65:"{"privatekey":"dd","servername":"wdw","tokenexpiremin":"1000000"}";s:1:"e";O:8:"DateTime":3:{s:4:"date";s:26:"2024-07-25 03:31:07.135999";s:13:"timezone_type";i:3;s:8:"timezone";s:3:"UTC";}s:1:"g";a:0:{}s:1:"m";N;s:1:"c";N;}

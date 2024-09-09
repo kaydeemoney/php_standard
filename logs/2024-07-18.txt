@@ -1,0 +1,6 @@
+[18-Jul-2024 12:00:45 Africa/Lagos] Uncaught exception: 'Error' with message 'Undefined constant Config\Constants::SUPPORT_EMAIL'
+Stack trace: #0 D:\wamp64\www\taskcolony\config\Mail_SMS_Responses.php(2275): Config\Mail_SMS_Responses::sendOTPtoEmailHTML(Array, 'Jr1hAxLf3RHul1v...', '4434')
+#1 D:\wamp64\www\taskcolony\api\user\auth\send_email_or_pno_verification_code.php(155): Config\Mail_SMS_Responses::sendMailOTP(10, '4434', 'Jr1hAxLf3RHul1v...', 'habnarmtec1@gma...')
+#2 {main}
+Thrown in 'D:\wamp64\www\taskcolony\config\Mail_SMS_Responses.php' on line 2161
+OTHER ERRORS'   

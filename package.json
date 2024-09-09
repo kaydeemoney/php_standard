@@ -1,0 +1,21 @@
+{
+  "name": "taskcolony",
+  "version": "1.0.0",
+  "description": "FIle name in the config and databasecall folder must have case the class name have",
+  "main": "index.js",
+  "scripts": {
+    "start": "sass --watch ./landing/assets/sass/style.scss ./landing/assets/css/style.css",
+    "minify": "css-minify -d ./landing/assets/css -o ./landing/assets/css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.5.2",
+    "bootstrap": "^5.3.3",
+    "sass": "^1.77.6"
+  },
+  "devDependencies": {
+    "css-minify": "^2.0.0"
+  }
+}
